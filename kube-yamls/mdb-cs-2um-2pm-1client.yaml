@@ -24,8 +24,8 @@ spec:
   hostname: pm01
   subdomain: easy
   containers:
-      - name: mdb-cs-ubuntu-1604
-        image: wonkywumpus/mdb-cs-ubuntu-1604:0.10
+      - name: mdb-cs-easy-sshd-ubuntu-1604
+        image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
         ports:
         - containerPort: 22
         volumeMounts:
@@ -50,8 +50,8 @@ spec:
   hostname: pm02
   subdomain: easy
   containers:
-      - name: mdb-cs-ubuntu-1604
-        image: wonkywumpus/mdb-cs-ubuntu-1604:0.10
+      - name: mdb-cs-easy-sshd-ubuntu-1604
+        image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
         ports:
         - containerPort: 22
         volumeMounts:
@@ -76,8 +76,8 @@ spec:
   hostname: um01
   subdomain: easy
   containers:
-      - name: mdb-cs-ubuntu-1604
-        image: wonkywumpus/mdb-cs-ubuntu-1604:0.10
+      - name: mdb-cs-easy-sshd-ubuntu-1604
+        image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
         ports:
         - containerPort: 22
         volumeMounts:
@@ -102,8 +102,8 @@ spec:
   hostname: um02
   subdomain: easy
   containers:
-      - name: mdb-cs-ubuntu-1604
-        image: wonkywumpus/mdb-cs-ubuntu-1604:0.10
+      - name: mdb-cs-easy-sshd-ubuntu-1604
+        image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
         ports:
         - containerPort: 22
         volumeMounts:
@@ -128,8 +128,8 @@ spec:
   hostname: client01 
   subdomain: easy
   containers:
-      - name: mdb-cs-ubuntu-1604
-        image: wonkywumpus/mdb-cs-ubuntu-1604:0.10
+      - name: mdb-cs-easy-sshd-ubuntu-1604
+        image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
         ports:
         - containerPort: 22
         volumeMounts:
