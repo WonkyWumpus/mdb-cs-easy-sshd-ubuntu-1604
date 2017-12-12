@@ -13,4 +13,6 @@ RUN apt-get -y install rsyslog
 
 #RUN curl -o /root/mariadb-columnstore-1.0.11-1-xenial.x86_64.deb.tar.gz https://downloads.mariadb.com/ColumnStore/1.0.11/ubuntu/dists/xenial/main/binary_amd64/mariadb-columnstore-1.0.11-1-xenial.x86_64.deb.tar.gz
 
-RUN curl -o /root/mariadb-columnstore-1.1.0-1-xenial.x86_64.deb.tar.gz https://downloads.mariadb.com/ColumnStore/1.1.0/ubuntu/dists/xenial/main/binary_amd64/mariadb-columnstore-1.1.0-1-xenial.x86_64.deb.tar.gz
+#RUN curl -o /root/mariadb-columnstore-1.1.0-1-xenial.x86_64.deb.tar.gz https://downloads.mariadb.com/ColumnStore/1.1.0/ubuntu/dists/xenial/main/binary_amd64/mariadb-columnstore-1.1.0-1-xenial.x86_64.deb.tar.gz
+
+RUN curl -o /root/mariadb-columnstore-1.1.2-1-xenial.x86_64.deb.tar.gz https://downloads.mariadb.com/ColumnStore/1.1.2/ubuntu/dists/xenial/main/binary_amd64/mariadb-columnstore-1.1.2-1-xenial.x86_64.deb.tar.gz
