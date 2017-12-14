@@ -216,7 +216,7 @@ Enter 'mcsadmin' to access the MariaDB ColumnStore Admin console
 
 NOTE: The MariaDB ColumnStore Alias Commands are in /etc/profile.d/columnstoreAlias
 
-root@pm-0:~# <b>. /usr/local/mariadb/columnstore/bin/columnstoreAlias</b>
+root@pm-0:~# . /usr/local/mariadb/columnstore/bin/columnstoreAlias
 ```
 
 ## Errata and Future Enhancements
