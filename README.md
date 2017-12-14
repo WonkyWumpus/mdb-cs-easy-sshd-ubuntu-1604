@@ -219,6 +219,11 @@ NOTE: The MariaDB ColumnStore Alias Commands are in /etc/profile.d/columnstoreAl
 root@pm-0:~# . /usr/local/mariadb/columnstore/bin/columnstoreAlias
 ```
 
+
+## Issues, Comments and Suggestions
+
+Please use the github Issue feature to provide any and all feedback.
+
 ## Errata and Future Enhancements
 
 **Lots** of work (refactoring included) to do to make this closer to "Kubernetes native".  Some of the work is gated by hoped for changes to core install and config process of MariaDB AX.
