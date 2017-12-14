@@ -219,6 +219,22 @@ NOTE: The MariaDB ColumnStore Alias Commands are in /etc/profile.d/columnstoreAl
 root@pm-0:~# . /usr/local/mariadb/columnstore/bin/columnstoreAlias
 ```
 
+One of your first tasks is likely to be to create a user that can connect from your client01 pod or from your host machine. You will create your user by connecting through the um-0 machine.
+
+`root@pm-0:~# ssh root@um-0`
+
+`root@um-0:~# mcsmysql`
+
+```
+MariaDB [(none)]> create user dba@'%' identified by 'm18Maria';`
+Query OK, 0 rows affected (0.00 sec)
+```
+
+```MariaDB [(none)]> grant all on *.* to dba@'%';
+Query OK, 0 rows affected (0.00 sec)
+```
+
+MariaDB [(none)]>
 
 ## Issues, Comments and Suggestions
 
