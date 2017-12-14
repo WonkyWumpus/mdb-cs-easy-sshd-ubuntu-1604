@@ -230,11 +230,24 @@ MariaDB [(none)]> create user dba@'%' identified by 'm18Maria';`
 Query OK, 0 rows affected (0.00 sec)
 ```
 
-```MariaDB [(none)]> grant all on *.* to dba@'%';
+```
+MariaDB [(none)]> grant all on *.* to dba@'%';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
-MariaDB [(none)]>
+You can test your connection into MariaDB AX from your client01 pod
+
+`root@um-0:~# ssh root@client01`
+
+`root@client01:~# /usr/local/mariadb/columnstore/mysql/bin/mysql --user=dba --password=m18Maria --host=um-0`
+
+You can also test the connection from your host laptop into the UM Service.
+
+`$ kubectl describe service um-service|grep IP`
+
+`$ kubectl describe service um-service|grep "NodePort:"`
+
+`$ mysql --user=dba --password=m18Maria --host=<IP from above> --port=<port from above>`
 
 ## Issues, Comments and Suggestions
 
