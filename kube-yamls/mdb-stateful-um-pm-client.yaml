@@ -1,0 +1,104 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: pm
+  labels:
+    network: easy
+spec:
+  replicas: 2
+  serviceName: easy
+  selector:
+    matchLabels:
+      component: pm-node
+  template:
+    metadata:
+      labels:
+        component: pm-node
+        network: easy
+    spec:
+      subdomain: easy
+      containers:
+          - name: mdb-cs-easy-sshd-ubuntu-1604
+            image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
+            ports:
+            - containerPort: 22
+            volumeMounts:
+            - name: easy-keys
+              mountPath: /root/.secret-easy-keys
+              readOnly: true
+      volumes:
+          - name: easy-keys
+            secret:
+              secretName: easy-keys
+---
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: um
+  labels:
+    network: easy
+spec:
+  replicas: 2
+  serviceName: easy
+  selector:
+    matchLabels:
+      component: um-node
+  template:
+    metadata:
+      labels:
+        component: um-node
+        network: easy
+    spec:
+      subdomain: easy
+      containers:
+          - name: mdb-cs-easy-sshd-ubuntu-1604
+            image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
+            ports:
+            - containerPort: 22
+            volumeMounts:
+            - name: easy-keys
+              mountPath: /root/.secret-easy-keys
+              readOnly: true
+      volumes:
+          - name: easy-keys
+            secret:
+              secretName: easy-keys
+---
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: client01 
+  labels:
+    network: easy
+    name: client01
+    component: client-node
+spec:
+  hostname: client01 
+  subdomain: easy
+  containers:
+      - name: mdb-cs-easy-sshd-ubuntu-1604
+        image: wonkywumpus/mdb-cs-easy-sshd-ubuntu-1604:0.10
+        ports:
+        - containerPort: 22
+        volumeMounts:
+        - name: easy-keys
+          mountPath: /root/.secret-easy-keys
+          readOnly: true
+  volumes:
+      - name: easy-keys
+        secret:
+          secretName: easy-keys
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: um-service
+spec:
+  selector:
+    component: um-node
+  type: NodePort 
+  ports:
+  - name: mysql
+    port: 3306
+    targetPort: 3306
+    nodePort: 32700
