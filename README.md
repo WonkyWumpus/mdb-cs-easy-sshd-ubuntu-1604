@@ -222,7 +222,7 @@ root@pm-0:~# . /usr/local/mariadb/columnstore/bin/columnstoreAlias
 
 ## Issues, Comments and Suggestions
 
-Please use the github Issue feature to provide any and all feedback.
+Please use the github issue feature to provide any and all feedback.
 
 ## Errata and Future Enhancements
 
